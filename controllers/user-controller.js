@@ -43,7 +43,16 @@ const UserController = {
 
             await newUser.save()
 
-            res.json(newUser)
+            res.json({
+                email: newUser.email,
+                name: newUser.name,
+                avatarUrl: newUser.avatarUrl,
+                posts: newUser.posts,
+                likes: newUser.likes,
+                comments: newUser.comments,
+                followers: newUser.followers,
+                following: newUser.following,
+            })
 
         } catch (e) {
             console.log('Error with register')
@@ -90,17 +99,16 @@ const UserController = {
                 return res.status(404).json({ error: "Not found user" })
             }
 
-            // res.json({
-            //     "email": user.email,
-            //     "name": user.name,
-            //     "avatarUrl": user.avatarUrl,
-            //     "posts": user.posts,
-            //     "likes": user.likes,
-            //     "comments": user.comments,
-            //     "followers": user.followers,
-            //     "following": user.following,
-            // })
-            res.json({user})
+            res.json({
+                email: user.email,
+                name: user.name,
+                avatarUrl: user.avatarUrl,
+                posts: user.posts,
+                likes: user.likes,
+                comments: user.comments,
+                followers: user.followers,
+                following: user.following,
+            })
 
         } catch (e) {
             console.log('Error with getUserById')
@@ -110,28 +118,27 @@ const UserController = {
         res.send(userId)
     },
     updateUser: async (req, res) => {
-        const { id } = req.params
-        const { email, name, dateOfBirth, bio, location } = req.body
+        const { id } = req.params;
+        const { email, name, dateOfBirth, bio, location } = req.body;
 
         let filePath;
 
-        if (req.file && req.file.path){
-            filePath = req.file.path
+        if (req.file && req.file.path) {
+            filePath = req.file.path;
         }
 
-        if (!req.user.id === id){
-            return res.status(403).json({ error: 'Not access' })
+        if (req.user.id !== id) {
+            return res.status(403).json({ error: 'Нет доступа' });
         }
 
         try {
             if (email) {
-                const existUser = await User.findOne({ email })
+                const existUser = await User.findOne({email});
 
-                console.log('existUser', existUser)
-
-                if (existUser && existUser.id === id) {
-                   return res.status(400).json({ error: 'This email already exist!' })
+                if (existUser && existUser._id.toString() !== id) {
+                    return res.status(400).json({error: 'Этот email уже используется!'});
                 }
+            }
 
                 const updatedUserData = {
                     name,
@@ -141,35 +148,51 @@ const UserController = {
                     location,
                 };
 
-                // const updatedUser = await User.updateOne(existUser._id, updatedUserData);
-
-                const result = await User.updateOne(
-                    { _id: id }, // Фильтр
-                    { $set: updatedUserData }, // Обновляемые данные
-                    { new: true } // Возвращает обновленный документ (не применяется в updateOne)
-                );
-
-                if (result.nModified === 0) {
-                    return res.status(404).json({ error: 'User not found or data is the same' });
+                if (filePath) {
+                    updatedUserData.avatarUrl = filePath;
                 }
 
-                console.log('result', result)
-                // console.log('updatedUser', updatedUser)
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: id },
+                    { $set: updatedUserData },
+                    { new: true }
+                );
 
+                if (!updatedUser) {
+                    return res.status(404).json({ error: 'Пользователь не найден или данные не изменены' });
+                }
 
-                res.json({ message: 'User updated successfully' });
+                const newUserAfterUpdate = {
+                    id: updatedUser._id,
+                    email: updatedUser.email,
+                    name: updatedUser.name,
+                    avatarUrl: updatedUser.avatarUrl,
+                    posts: updatedUser.posts,
+                    likes: updatedUser.likes,
+                    comments: updatedUser.comments,
+                    followers: updatedUser.followers,
+                    following: updatedUser.following,
+                    createdAt: updatedUser.createdAt,
+                    updatedAt: updatedUser.updatedAt,
+                    bio: updatedUser.bio,
+                    dateOfBirth: updatedUser.dateOfBirth
+                }
 
-            }
-            res.json({ error: 'Email is required!' });
+                return res.json({ message: 'Пользователь успешно обновлен', user: newUserAfterUpdate});
         } catch (e) {
-            console.log('Error with updateUser')
-            res.status(500).json({ error: 'Error updateUser' })
+            console.log('Ошибка при обновлении пользователя', e);
+            return res.status(500).json({ error: 'Ошибка при обновлении пользователя' });
         }
-
-        res.send('updateUser')
     },
     current: async (req, res) => {
-        res.send('current')
+       try {
+           const user = await User.findById(req.user.id)
+
+           res.json(user)
+       } catch (e) {
+           console.log(e)
+           res.json({ error: "Error with get current user" })
+       }
     },
 }
 

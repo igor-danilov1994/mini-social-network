@@ -13,7 +13,7 @@ const UserSchema = new Schema({
     },
     name: String,
     avatarUrl: String,
-    dateOfBirth: Date,
+    dateOfBirth: String,
     bio: String,
     location: String,
     posts: [{

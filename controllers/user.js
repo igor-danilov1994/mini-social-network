@@ -3,11 +3,11 @@ const jDentIcon  = require("jdenticon");
 const path  = require("path");
 const fs  = require("fs");
 
-const {User} = require("../models");
+const { User } = require("../models");
 const jwt = require("jsonwebtoken");
 
 
-const UserController = {
+const UserControllers = {
     register: async (req, res) => {
         const { email, password, name } = req.body
 
@@ -191,9 +191,9 @@ const UserController = {
            res.json(user)
        } catch (e) {
            console.log(e)
-           res.json({ error: "Error with get current user" })
+           res.status(500).json({ error: "Error with get current user" })
        }
     },
 }
 
-module.exports = UserController
+module.exports = UserControllers

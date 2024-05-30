@@ -1,6 +1,11 @@
 const express = require('express')
 const multer = require('multer')
-const { UserController, PostController, CommentController} = require("../controllers");
+const {
+    UserController,
+    PostController,
+    CommentController,
+    LikeController
+} = require("../controllers");
 
 const checkToken = require("../middlewares/auth");
 const router = express.Router();
@@ -16,9 +21,11 @@ const storage = multer.diskStorage({
 })
 
 const uploads = multer({storage})
-const { register, login, current, getUserById, updateUser } = UserController
+
 const { createPost, getAllPosts, getPostById, updatePost, deletePost } = PostController
+const { register, login, current, getUserById, updateUser } = UserController
 const { createComment,  deleteComment } = CommentController
+const { likePost,  unLikePost } = LikeController
 
 //USER
 router.post('/register', register)
@@ -37,5 +44,10 @@ router.delete('/post/:id', checkToken, deletePost)
 //COMMENTS
 router.post('/comments', checkToken, createComment)
 router.delete('/comments/:id', checkToken, deleteComment)
+
+//LIKE
+router.post('/likes/', checkToken, likePost)
+router.delete('/likes/:id', checkToken, unLikePost)
+
 
 module.exports = router

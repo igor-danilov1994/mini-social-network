@@ -86,7 +86,7 @@ const PostController = {
         session.startTransaction();
 
         try {
-            const post = await Post.findById(postId).populate('authorId')
+            const post = await Post.findById(postId).populate('authorId', 'likes')
 
             if (!post) {
                 return res.json({ error: 'This post not found!' })

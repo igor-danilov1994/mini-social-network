@@ -21,7 +21,7 @@ const PostController = {
 
             res.json({
                 content: newPost.content,
-                authorId: newPost.authorId,
+                user: newPost.authorId,
                 likes: newPost.likes,
                 comments: newPost.comments,
                 createdAt: newPost.createdAt,
@@ -35,7 +35,7 @@ const PostController = {
     },
     getAllPosts: async (req, res) => {
         try {
-            const allPosts = await Post.find().populate('authorId')
+            const allPosts = await Post.find().populate(['authorId', 'comments', 'likes'])
 
             res.json(allPosts)
         } catch (e) {
@@ -52,7 +52,7 @@ const PostController = {
         }
 
         try {
-            const post = await Post.findById(postId)
+            const post = await Post.findById(postId).populate(['authorId', 'comments', 'likes'])
 
             if (!post) {
                 return res.json({ error: 'Post not found!'})

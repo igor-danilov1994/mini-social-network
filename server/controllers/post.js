@@ -1,4 +1,4 @@
-const { Post, Like, Comment} = require("../models");
+const { Post, Like, Comment, User} = require("../models");
 const { startSession } = require("mongoose");
 
 const PostController = {
@@ -11,6 +11,12 @@ const PostController = {
         }
 
         try {
+            const user = await User.findById(userId)
+
+            if (!user){
+                return res.status(400).json({ error: 'User not found!' })
+            }
+
             const newPost = await Post.create({
                 content: content,
                 authorId: userId,
@@ -18,6 +24,9 @@ const PostController = {
             })
 
             const postWithLikeInfo = newPost.likes.includes(userId)
+
+            user.posts.push(newPost)
+            await user.save()
 
             res.json({
                 content: newPost.content,

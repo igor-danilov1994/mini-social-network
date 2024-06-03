@@ -4,7 +4,8 @@ const {
     UserController,
     PostController,
     CommentController,
-    LikeController
+    LikeController,
+    FollowController
 } = require("../controllers");
 
 const checkToken = require("../middlewares/auth");
@@ -25,6 +26,7 @@ const uploads = multer({storage})
 const { createPost, getAllPosts, getPostById, updatePost, deletePost } = PostController
 const { register, login, current, getUserById, updateUser } = UserController
 const { createComment,  deleteComment } = CommentController
+const { followUser,  unFollowUser } = FollowController
 const { likePost,  unLikePost } = LikeController
 
 //USER
@@ -49,5 +51,8 @@ router.delete('/comments/:id', checkToken, deleteComment)
 router.post('/likes/', checkToken, likePost)
 router.delete('/likes/:id', checkToken, unLikePost)
 
+//FOLLOW
+router.post('/follow/', checkToken, followUser)
+router.delete('/unFollow/:id', checkToken, unFollowUser)
 
 module.exports = router

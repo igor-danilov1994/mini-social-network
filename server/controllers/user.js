@@ -186,7 +186,7 @@ const UserControllers = {
     },
     current: async (req, res) => {
        try {
-           const user = await User.findById(req.user.id)
+           const user = await User.findById(req.user.id).populate(['posts', 'followers'])
 
            res.json(user)
        } catch (e) {

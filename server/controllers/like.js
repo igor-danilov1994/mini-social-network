@@ -22,11 +22,12 @@ const LikeController = {
                 postId,
             })
 
-            const post = await Post.findById(postId)
-
             if (!postId) {
                 return res.json({ error: 'Post not found!' })
             }
+
+            const post = await Post.findById(postId)
+
 
             post.likes.push(newLike)
             await post.save();

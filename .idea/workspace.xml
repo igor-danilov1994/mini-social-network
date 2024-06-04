@@ -4,45 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="create client part app">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/.idea/mini-social-network.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/controllers/follow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/testConnection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/la-test_1717144613549.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/error.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/index.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/layout.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/like.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/like.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middlewares/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/follow.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/follow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/like.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/like.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/test1_1716543723132.png" beforeDir="false" afterPath="$PROJECT_DIR$/server/uploads/test1_1716543723132.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/test_1716967531027.png" beforeDir="false" afterPath="$PROJECT_DIR$/server/uploads/test_1716967531027.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
+    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="create Dockerfile on server part and fix some paths">
+      <change afterPath="$PROJECT_DIR$/client/src/components/button/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/container/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/header/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/layout/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/nav-button/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/them-provider/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/current-post/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/followers/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/following/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/posts/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/user-profile/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/format-to-client-date.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,27 +65,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/igordanilov/Desktop/mini-social-network",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev (1).executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/igordanilov/Desktop/mini-social-network&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server" />
@@ -170,7 +153,7 @@
       <workItem from="1717421544495" duration="5000" />
       <workItem from="1717421556776" duration="30000" />
       <workItem from="1717421680800" duration="1809000" />
-      <workItem from="1717423836660" duration="5110000" />
+      <workItem from="1717423836660" duration="16433000" />
     </task>
     <task id="LOCAL-00001" summary="create user methods">
       <option name="closed" value="true" />
@@ -220,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717429089973</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create Dockerfile on server part and fix some paths">
+      <option name="closed" value="true" />
+      <created>1717429286646</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717429286646</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +235,8 @@
     <MESSAGE value="create comments controller and fix post controller" />
     <MESSAGE value="create like controller" />
     <MESSAGE value="create client part app" />
-    <option name="LAST_COMMIT_MESSAGE" value="create client part app" />
+    <MESSAGE value="create Dockerfile on server part and fix some paths" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Dockerfile on server part and fix some paths" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

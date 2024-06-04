@@ -6,12 +6,14 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const {connect} = require("mongoose");
+const cors = require('cors')
 
 const app = express();
 
 const DB_URL = `mongodb+srv://igordanilov1824:test@cluster0.nzgd0mj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
 // view engine setup
+app.use(cors())
 app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());

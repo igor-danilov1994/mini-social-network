@@ -22,7 +22,11 @@ const userSlice = createSlice({
   name: "userSlice",
   initialState,
   reducers: {
-    logout: state => initialState,
+    logout: state => {
+      localStorage.removeItem("token")
+
+      return initialState
+    },
     resetUser: state => {
       state.user = null
     },
@@ -34,7 +38,6 @@ const userSlice = createSlice({
         state.isAuth = true
       })
       .addMatcher(current.matchFulfilled, (state, action) => {
-        console.log("current.matchFulfilled", action)
         state.current = action.payload
         state.isAuth = true
       })

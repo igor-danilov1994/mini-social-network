@@ -8,7 +8,6 @@ import { NavButton } from "../nav-button"
 interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = props => {
-  console.log("NavBar")
   return (
     <nav>
       <ul className="flex flex-col gap-5">

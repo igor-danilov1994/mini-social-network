@@ -6,7 +6,8 @@ interface CustomButtonProps extends ButtonProps {
 }
 
 export const CustomButton: FC<CustomButtonProps> = memo(props => {
-  const { children, className, fullWidth, icon, type, color } = props
+  const { children, className, fullWidth, icon, type, color, ...otherProps } =
+    props
 
   return (
     <Button
@@ -17,6 +18,7 @@ export const CustomButton: FC<CustomButtonProps> = memo(props => {
       variant="light"
       type={type}
       fullWidth={fullWidth}
+      {...otherProps}
     >
       {children}
     </Button>

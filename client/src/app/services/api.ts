@@ -6,11 +6,11 @@ import {
 } from "@reduxjs/toolkit/query/react"
 import { RootState } from "../store"
 
-const BASEURL =
+export const BASE_URL =
   process.env.NODE_ENV === "production" ? "none" : "http://localhost:3000"
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: `${BASEURL}/api`,
+  baseUrl: `${BASE_URL}/api`,
   prepareHeaders: (headers, { getState }) => {
     const state = getState() as RootState
     const token = state.userReduces.token ?? localStorage.getItem("token")

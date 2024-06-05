@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="install cors package on server part app">
-      <change afterPath="$PROJECT_DIR$/client/src/components/input/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/features/user/authGuard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/features/user/login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/features/user/registration.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/moddleware/auth.ts" afterDir="false" />
+    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="create login, registration and get user logic">
+      <change afterPath="$PROJECT_DIR$/client/src/components/profile/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +155,7 @@
       <workItem from="1717421556776" duration="30000" />
       <workItem from="1717421680800" duration="1809000" />
       <workItem from="1717423836660" duration="20647000" />
-      <workItem from="1717505199729" duration="10022000" />
+      <workItem from="1717505199729" duration="11888000" />
     </task>
     <task id="LOCAL-00001" summary="create user methods">
       <option name="closed" value="true" />
@@ -237,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717508545227</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create login, registration and get user logic">
+      <option name="closed" value="true" />
+      <created>1717575182900</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717575182900</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +264,8 @@
     <MESSAGE value="create Dockerfile on server part and fix some paths" />
     <MESSAGE value="create layout and components for client part" />
     <MESSAGE value="install cors package on server part app" />
-    <option name="LAST_COMMIT_MESSAGE" value="install cors package on server part app" />
+    <MESSAGE value="create login, registration and get user logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="create login, registration and get user logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,11 +8,20 @@ import {
 } from "@nextui-org/react"
 import { FaRegMoon } from "react-icons/fa"
 import { LuSunMedium } from "react-icons/lu"
+import { CustomButton } from "../button"
+import { logout } from "../../features/user/userSlice"
+import { useAppDispatch } from "../../app/hooks"
+import { CiLogout } from "react-icons/ci"
 
 interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
+  const dispatch = useAppDispatch()
+
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
 
   return (
     <Navbar>
@@ -25,6 +34,12 @@ export const Header: FC<HeaderProps> = () => {
           onClick={toggleTheme}
         >
           {theme === "light" ? <FaRegMoon /> : <LuSunMedium />}
+        </NavbarItem>
+        <NavbarItem>
+          <CustomButton variant="flat" onClick={logoutHandler}>
+            <CiLogout />
+            <span>Выйти</span>
+          </CustomButton>
         </NavbarItem>
       </NavbarContent>
     </Navbar>

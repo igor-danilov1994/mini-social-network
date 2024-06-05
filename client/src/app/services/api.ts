@@ -11,16 +11,16 @@ const BASEURL =
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${BASEURL}/api`,
-  // prepareHeaders: (headers, { getState }) => {
-  //   const state = getState as RootState
-  //   const token = state.auth.token ?? localStorage.getItem("token")
-  //
-  //   if (token) {
-  //     headers.set("authorization", `Bearer ${token}`)
-  //   }
-  //
-  //   return headers
-  // },
+  prepareHeaders: (headers, { getState }) => {
+    const state = getState() as RootState
+    const token = state.userReduces.token ?? localStorage.getItem("token")
+
+    if (token) {
+      headers.set("authorization", `Bearer ${token}`)
+    }
+
+    return headers
+  },
 })
 
 const baseQueryWithRetry = retry(baseQuery, { maxRetries: 1 })

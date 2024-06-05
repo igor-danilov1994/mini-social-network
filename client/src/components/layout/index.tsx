@@ -1,13 +1,24 @@
-import { FC, ReactNode } from "react"
-import { Outlet } from "react-router-dom"
+import { FC, ReactNode, useEffect } from "react"
+import { Outlet, useNavigate } from "react-router-dom"
 
 import { Header } from "../header"
 import { Container } from "../container"
 import { NavBar } from "../nav-bar"
+import { useAppSelector } from "../../app/hooks"
 
 interface LayoutProps {}
 
 export const Layout: FC<LayoutProps> = props => {
+  const isAuth = useAppSelector(state => state.userReduces.isAuth)
+  const user = useAppSelector(state => state.userReduces.user)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/auth")
+    }
+  }, [isAuth])
+
   return (
     <>
       <Header />

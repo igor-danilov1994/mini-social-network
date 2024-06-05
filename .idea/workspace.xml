@@ -4,27 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="create Dockerfile on server part and fix some paths">
-      <change afterPath="$PROJECT_DIR$/client/src/components/button/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/container/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layout/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/nav-button/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/them-provider/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/current-post/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/followers/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/following/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/posts/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/user-profile/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/format-to-client-date.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" afterDir="false" />
+    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="install cors package on server part app">
+      <change afterPath="$PROJECT_DIR$/client/src/components/input/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/user/authGuard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/user/login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/user/registration.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/moddleware/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/auth/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/has-error-field.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +74,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev (2).executor&quot;: &quot;Run&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier&quot;,
@@ -88,12 +85,23 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/features/user" />
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (1)">
+  <component name="RunManager" selected="npm.dev (2)">
     <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
@@ -124,6 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
@@ -153,7 +162,8 @@
       <workItem from="1717421544495" duration="5000" />
       <workItem from="1717421556776" duration="30000" />
       <workItem from="1717421680800" duration="1809000" />
-      <workItem from="1717423836660" duration="16433000" />
+      <workItem from="1717423836660" duration="20647000" />
+      <workItem from="1717505199729" duration="10022000" />
     </task>
     <task id="LOCAL-00001" summary="create user methods">
       <option name="closed" value="true" />
@@ -211,7 +221,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717429286646</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="create layout and components for client part">
+      <option name="closed" value="true" />
+      <created>1717501106621</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717501106621</updated>
+    </task>
+    <task id="LOCAL-00009" summary="install cors package on server part app">
+      <option name="closed" value="true" />
+      <created>1717508545227</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717508545227</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +262,9 @@
     <MESSAGE value="create like controller" />
     <MESSAGE value="create client part app" />
     <MESSAGE value="create Dockerfile on server part and fix some paths" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Dockerfile on server part and fix some paths" />
+    <MESSAGE value="create layout and components for client part" />
+    <MESSAGE value="install cors package on server part app" />
+    <option name="LAST_COMMIT_MESSAGE" value="install cors package on server part app" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

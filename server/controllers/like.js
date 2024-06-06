@@ -11,7 +11,7 @@ const LikeController = {
         }
 
         try {
-            const like = await Like.findOne({ userId })
+            const like = await Like.findOne({ postId: userId })
 
             if (like) {
                 return res.status(400).json({ error: 'Like already has create!' })
@@ -47,7 +47,7 @@ const LikeController = {
         session.startTransaction();
 
         try {
-            const like = await Like.findById(likeId)
+            const like = await Like.findOne({postId : likeId})
 
             if (!like) {
                 return res.status(400).json({ error: 'Like not found!' })
@@ -59,7 +59,7 @@ const LikeController = {
                 return res.json({ error: 'Not access!' })
             }
 
-            await Like.deleteOne({ _id: likeId }).session(session);
+            await Like.deleteOne({ postId: likeId }).session(session);
 
             const post = await Post.findById(like.postId).session(session);
 

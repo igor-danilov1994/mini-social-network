@@ -35,7 +35,7 @@ const PostController = {
                 comments: newPost.comments,
                 createdAt: newPost.createdAt,
                 id: newPost.id,
-                likeByUser: postWithLikeInfo
+                likedByUser: postWithLikeInfo
             })
         } catch (e) {
             console.log(e)
@@ -43,10 +43,33 @@ const PostController = {
         }
     },
     getAllPosts: async (req, res) => {
+        const userId = req.user.id
+
         try {
             const allPosts = await Post.find().populate(['authorId', 'comments', 'likes'])
 
-            res.json(allPosts)
+            const user = await User.findById(userId)
+
+            if (!user){
+                return res.status(400).json({ error: 'User not found!' })
+            }
+
+            const postsWithLikeInfo = allPosts.map((post) => {
+                const hasLike =  Boolean(post.likes.find(like => like.userId.toString() === userId))
+
+                return {
+                    content: post.content,
+                    user: post.authorId,
+                    likes: post.likes,
+                    comments: post.comments,
+                    createdAt: post.createdAt,
+                    authorId: post.authorId,
+                    id: post.id,
+                    likedByUser: hasLike
+                }
+            })
+
+            res.json(postsWithLikeInfo)
         } catch (e) {
             console.log(e)
             res.status(500).json({ error: "Error getAllPosts" })
@@ -69,7 +92,7 @@ const PostController = {
 
             const postWithLikeInfo = {
                 post,
-                likeByUser: post.likes.includes(userId)
+                likedByUser: post.likes.includes(userId)
             }
 
 

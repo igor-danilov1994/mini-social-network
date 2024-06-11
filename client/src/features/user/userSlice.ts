@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-import { User } from "../../app/types"
+import type { User } from "../../app/types"
 import { current, getUserById, login } from "../../app/services/userApi"
 
 interface initialState {
@@ -42,7 +42,7 @@ const userSlice = createSlice({
         state.isAuth = true
       })
       .addMatcher(getUserById.matchFulfilled, (state, action) => {
-        state.current = action.payload
+        state.user = action.payload
       })
   },
 })

@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="create login, registration and get user logic">
-      <change afterPath="$PROJECT_DIR$/client/src/components/profile/index.tsx" afterDir="false" />
+    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="fix Login component on client part">
+      <change afterPath="$PROJECT_DIR$/server/helpers/configureUserData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/nav-bar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/like.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/like.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="false" />
-    <option name="myAllFileTypesSelected" value="true" />
-    <option name="mySelectedFileTypes">
-      <set />
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,12 +28,19 @@
     &quot;assignee&quot;: &quot;igor-danilov1994&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/igor-danilov1994/mini-social-network.git&quot;,
-    &quot;accountId&quot;: &quot;94a87cde-7c22-4899-b68b-77175a6aee0f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/igor-danilov1994/mini-social-network.git",
+    "accountId": "216db8cf-6a8a-46b6-b62d-067183d2fc54"
   }
+}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
+  <component name="LLMProjectSettings">
+    <option name="aiignore_manually_set" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -53,28 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/igordanilov/Desktop/mini-social-network&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev (2).executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/igordanilov/IdeaProjects/mini-social-network",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev (1).executor": "Run",
+    "npm.dev (2).executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/features/user" />
@@ -134,8 +134,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-js-predefined-d6986cc7102b-e20c6e5d2dc8-JavaScript-WS-242.14146.21" />
       </set>
     </attachedChunks>
   </component>
@@ -155,7 +154,10 @@
       <workItem from="1717421556776" duration="30000" />
       <workItem from="1717421680800" duration="1809000" />
       <workItem from="1717423836660" duration="20647000" />
-      <workItem from="1717505199729" duration="11888000" />
+      <workItem from="1717505199729" duration="19009000" />
+      <workItem from="1717584220164" duration="34221000" />
+      <workItem from="1718003907880" duration="15000" />
+      <workItem from="1718004415154" duration="26773000" />
     </task>
     <task id="LOCAL-00001" summary="create user methods">
       <option name="closed" value="true" />
@@ -237,7 +239,207 @@
       <option name="project" value="LOCAL" />
       <updated>1717575182900</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create profile card and logout feature">
+      <option name="closed" value="true" />
+      <created>1717577288821</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717577288821</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix like-unlike and post methods">
+      <option name="closed" value="true" />
+      <created>1717672982859</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717672982859</updated>
+    </task>
+    <task id="LOCAL-00013" summary="create exhaustingCheck function for check types in switch-case construction">
+      <option name="closed" value="true" />
+      <created>1718090792004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718090792004</updated>
+    </task>
+    <task id="LOCAL-00014" summary="create CustomCard on client part">
+      <option name="closed" value="true" />
+      <created>1718092120727</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092120727</updated>
+    </task>
+    <task id="LOCAL-00015" summary="create CreateComment component on client part">
+      <option name="closed" value="true" />
+      <created>1718092151581</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092151581</updated>
+    </task>
+    <task id="LOCAL-00016" summary="create CreatePost component on client part">
+      <option name="closed" value="true" />
+      <created>1718092167297</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092167297</updated>
+    </task>
+    <task id="LOCAL-00017" summary="create GoBack component on client part">
+      <option name="closed" value="true" />
+      <created>1718092177751</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092177751</updated>
+    </task>
+    <task id="LOCAL-00018" summary="create CustomInput component on client part">
+      <option name="closed" value="true" />
+      <created>1718092189632</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092189632</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix Layout component on client part">
+      <option name="closed" value="true" />
+      <created>1718092213424</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092213424</updated>
+    </task>
+    <task id="LOCAL-00020" summary="create MetaInfo component on client part">
+      <option name="closed" value="true" />
+      <created>1718092223637</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092223637</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix Profile component on client part">
+      <option name="closed" value="true" />
+      <created>1718092239850</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092239850</updated>
+    </task>
+    <task id="LOCAL-00022" summary="create ProfileInfo component on client part">
+      <option name="closed" value="true" />
+      <created>1718092250045</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092250045</updated>
+    </task>
+    <task id="LOCAL-00023" summary="create Typography component on client part">
+      <option name="closed" value="true" />
+      <created>1718092267128</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092267128</updated>
+    </task>
+    <task id="LOCAL-00024" summary="create CustomUser component on client part">
+      <option name="closed" value="true" />
+      <created>1718092295044</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092295044</updated>
+    </task>
+    <task id="LOCAL-00025" summary="create CurrentPost component on client part">
+      <option name="closed" value="true" />
+      <created>1718092303908</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092303908</updated>
+    </task>
+    <task id="LOCAL-00026" summary="create EditProfile component on client part">
+      <option name="closed" value="true" />
+      <created>1718092322845</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092322845</updated>
+    </task>
+    <task id="LOCAL-00027" summary="create Followers component on client part">
+      <option name="closed" value="true" />
+      <created>1718092349170</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092349170</updated>
+    </task>
+    <task id="LOCAL-00028" summary="create Posts component on client part">
+      <option name="closed" value="true" />
+      <created>1718092358927</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092358927</updated>
+    </task>
+    <task id="LOCAL-00029" summary="create UserProfile component on client part">
+      <option name="closed" value="true" />
+      <created>1718092380248</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092380248</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix followApi on client part">
+      <option name="closed" value="true" />
+      <created>1718092408161</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092408161</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix commentsApi on client part">
+      <option name="closed" value="true" />
+      <created>1718092422279</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092422279</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix userSlice on client part">
+      <option name="closed" value="true" />
+      <created>1718092436997</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092436997</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix types file on client part">
+      <option name="closed" value="true" />
+      <created>1718092464148</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092464148</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix postApi on client part">
+      <option name="closed" value="true" />
+      <created>1718092477476</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092477476</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix Login component on client part">
+      <option name="closed" value="true" />
+      <created>1718092501561</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1718092501561</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,17 +457,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create user methods" />
-    <MESSAGE value="finished create user controllers" />
-    <MESSAGE value="create post controllers" />
-    <MESSAGE value="create comments controller and fix post controller" />
-    <MESSAGE value="create like controller" />
-    <MESSAGE value="create client part app" />
-    <MESSAGE value="create Dockerfile on server part and fix some paths" />
-    <MESSAGE value="create layout and components for client part" />
-    <MESSAGE value="install cors package on server part app" />
-    <MESSAGE value="create login, registration and get user logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="create login, registration and get user logic" />
+    <MESSAGE value="create profile card and logout feature" />
+    <MESSAGE value="fix like-unlike and post methods" />
+    <MESSAGE value="create exhaustingCheck function for check types in switch-case construction" />
+    <MESSAGE value="create CustomCard on client part" />
+    <MESSAGE value="create CreateComment component on client part" />
+    <MESSAGE value="create CreatePost component on client part" />
+    <MESSAGE value="create GoBack component on client part" />
+    <MESSAGE value="create CustomInput component on client part" />
+    <MESSAGE value="fix Layout component on client part" />
+    <MESSAGE value="create MetaInfo component on client part" />
+    <MESSAGE value="fix Profile component on client part" />
+    <MESSAGE value="create ProfileInfo component on client part" />
+    <MESSAGE value="create Typography component on client part" />
+    <MESSAGE value="create CustomUser component on client part" />
+    <MESSAGE value="create CurrentPost component on client part" />
+    <MESSAGE value="create EditProfile component on client part" />
+    <MESSAGE value="create Followers component on client part" />
+    <MESSAGE value="create Posts component on client part" />
+    <MESSAGE value="create UserProfile component on client part" />
+    <MESSAGE value="fix followApi on client part" />
+    <MESSAGE value="fix commentsApi on client part" />
+    <MESSAGE value="fix userSlice on client part" />
+    <MESSAGE value="fix types file on client part" />
+    <MESSAGE value="fix postApi on client part" />
+    <MESSAGE value="fix Login component on client part" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Login component on client part" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

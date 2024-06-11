@@ -6,7 +6,7 @@ const CommentController = {
        const userId = req.user.id
 
         if (!content || !postId) {
-            return res.json({error: 'Contend field is required!'})
+            return res.status(400).json({error: 'Contend field is required!'})
         }
 
         try {

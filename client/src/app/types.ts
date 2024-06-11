@@ -1,40 +1,40 @@
 export type User = {
-  _id: string
-  email: string
-  password: string
+  id?: string
+  email?: string
+  password?: string
   name?: string
   avatarUrl?: string
-  dateOfBirth?: Date
-  createdAt: Date
-  updatedAt: Date
+  dateOfBirth?: string
+  createdAt?: Date
+  updatedAt?: Date
   bio?: string
   location?: string
-  posts: Post[]
-  following: Follows[]
-  followers: Follows[]
-  likes: Like[]
-  comments: Comment[]
+  posts?: Post[]
+  following?: Follows[]
+  followers?: Follows[]
+  likes?: Like[]
+  comments?: Comment[]
   isFollowing?: boolean
 }
 
 export type Follows = {
   id: string
-  follower: User
-  followerId: string
+  followers: User
+  followerId: User
   following: User
   followingId: string
 }
 
 export type Post = {
   id: string
-  content: string
-  author: User
-  authorId: string
-  likes: Like[]
-  comments: Comment[]
-  likedByUser: boolean
-  createdAt: Date
-  updatedAt: Date
+  content?: string
+  author?: User
+  authorId?: User
+  likes?: Like[]
+  comments?: Comment[]
+  likedByUser?: boolean
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 export type Like = {
@@ -46,10 +46,9 @@ export type Like = {
 }
 
 export type Comment = {
-  id: string
+  _id: string
   content: string
-  user: User
-  userId: string
+  userId: User
   post: Post
   postId: string
 }

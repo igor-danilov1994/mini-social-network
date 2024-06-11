@@ -1,4 +1,5 @@
-import { FC, ReactNode, useEffect } from "react"
+import { useEffect } from "react"
+import type { FC } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 
 import { Header } from "../header"
@@ -18,7 +19,7 @@ export const Layout: FC<LayoutProps> = props => {
     if (!isAuth) {
       navigate("/auth")
     }
-  }, [isAuth])
+  }, [isAuth, navigate])
 
   return (
     <>

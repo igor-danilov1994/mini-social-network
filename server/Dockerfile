@@ -11,3 +11,6 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+## docker build -t mini-express-server .
+## docker compose up --build

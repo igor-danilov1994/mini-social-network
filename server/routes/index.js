@@ -34,7 +34,7 @@ router.post('/register', register)
 router.post('/login', login)
 router.get('/current', checkToken, current)
 router.get('/user/:id', checkToken, getUserById)
-router.put('/users/:id', checkToken, updateUser)
+router.put('/users/:id', checkToken, uploads.single('avatar'), updateUser)
 
 //POST
 router.post('/posts', checkToken, createPost)

@@ -1,5 +1,6 @@
-import { FC, memo } from "react"
-import { Input, InputProps } from "@nextui-org/react"
+import type { FC } from "react"
+import type { InputProps } from "@nextui-org/react"
+import { Input } from "@nextui-org/react"
 import type { Control } from "react-hook-form"
 import { useController } from "react-hook-form"
 
@@ -37,6 +38,7 @@ export const CustomInput: FC<CustomInputProps> = props => {
       placeholder={placeholder}
       errorMessage={`${errors[name]?.message ?? ""}`}
       required={required}
+      endContent={endContent}
       {...control}
     />
   )

@@ -84,17 +84,32 @@ const PostController = {
         }
 
         try {
-            const post = await Post.findById(postId).populate(['authorId', 'comments', 'likes'])
+            const post = await Post.findById(postId)
+                .populate('authorId')
+                .populate({
+                    path: 'comments',
+                    populate: {
+                        path: 'userId',
+                        model: 'User'
+                    }
+                })
+                .populate('likes');
+
 
             if (!post) {
-                return res.json({ error: 'Post not found!'})
+                return res.status(400).json({ error: 'Post not found!'})
             }
+            const hasLike =  Boolean(post.likes.find(like => like.userId.toString() === userId))
 
             const postWithLikeInfo = {
-                post,
-                likedByUser: post.likes.includes(userId)
+                authorId: post.authorId,
+                comments: post.comments,
+                content: post.content,
+                createdAt: post.createdAt,
+                likes: post.likes,
+                id: post._id,
+                likedByUser: hasLike
             }
-
 
             res.json(postWithLikeInfo)
         } catch (e) {
@@ -121,7 +136,7 @@ const PostController = {
             const post = await Post.findById(postId).populate('authorId', 'likes')
 
             if (!post) {
-                return res.json({ error: 'This post not found!' })
+                return res.status(400).json({ error: 'This post not found!' })
             }
 
             const postAuthorId = post.authorId._id.toHexString()

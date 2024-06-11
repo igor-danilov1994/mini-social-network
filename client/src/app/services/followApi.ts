@@ -9,7 +9,7 @@ export const followApi = api.injectEndpoints({
         body,
       }),
     }),
-    unFollowUser: build.mutation<void, string>({
+    unfollowUser: build.mutation<void, string>({
       query: id => ({
         url: `/unfollow/${id}`,
         method: "DELETE",
@@ -18,9 +18,9 @@ export const followApi = api.injectEndpoints({
   }),
 })
 
-export const { usePrefetch, useFollowUserMutation, useUnFollowUserMutation } =
+export const { usePrefetch, useFollowUserMutation, useUnfollowUserMutation } =
   followApi
 
 export const {
-  endpoints: { followUser, unFollowUser },
+  endpoints: { followUser, unfollowUser },
 } = followApi

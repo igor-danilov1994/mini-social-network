@@ -28,7 +28,6 @@ const LikeController = {
 
             const post = await Post.findById(postId)
 
-
             post.likes.push(newLike)
             await post.save();
 
@@ -40,31 +39,29 @@ const LikeController = {
 
     },
     unLikePost: async (req, res) => {
-        const likeId = req.params.id
+        const postId = req.params.id
         const userId = req.user.id
 
         const session = await startSession();
         session.startTransaction();
 
         try {
-            const like = await Like.findOne({postId : likeId})
+            const like = await Like.findOne({ postId : postId })
+            const post = await Post.findById(postId).session(session);
 
             if (!like) {
                 return res.status(400).json({ error: 'Like not found!' })
             }
 
-            const likeUserId =  like.userId.toHexString()
-
-            if (likeUserId !== userId) {
-                return res.json({ error: 'Not access!' })
+            if (userId !== like.userId.toString()) {
+                return res.status(400).json({ error: 'Not access!' })
             }
 
-            await Like.deleteOne({ postId: likeId }).session(session);
-
-            const post = await Post.findById(like.postId).session(session);
+            await Like.deleteOne({ _id: like._id }).session(session);
 
             if (post) {
-                post.likes.pull(likeId);
+                post.likes = post.likes.filter(itm => itm._id.toString() !== like._id.toString());
+
                 await post.save({ session });
             }
 

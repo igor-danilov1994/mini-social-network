@@ -1,10 +1,11 @@
-import { FC, useState } from "react"
+import type { FC } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "@nextui-org/react"
 import { useNavigate } from "react-router-dom"
 
 import { CustomInput } from "../../components/input"
-import { SelectedTab } from "../../pages/auth"
+import type { SelectedTab } from "../../pages/auth"
 import { CustomButton } from "../../components/button"
 import {
   useLazyCurrentQuery,
@@ -23,11 +24,7 @@ interface LoginPayload {
 export const Login: FC<LoginProps> = props => {
   const { setSelected } = props
 
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<LoginPayload>({
+  const { handleSubmit, control } = useForm<LoginPayload>({
     mode: "onChange",
     reValidateMode: "onBlur",
     defaultValues: {
@@ -39,7 +36,6 @@ export const Login: FC<LoginProps> = props => {
   const [login, { isLoading }] = useLoginMutation()
   const [triggerCurrentQuery] = useLazyCurrentQuery()
   const navigate = useNavigate()
-  const [error, setError] = useState()
 
   const onSubmit = async (data: LoginPayload) => {
     try {
@@ -48,8 +44,7 @@ export const Login: FC<LoginProps> = props => {
 
       navigate("/")
     } catch (error) {
-      // @ts-ignore
-      setError(error.data.error)
+      console.log(error)
     }
   }
 

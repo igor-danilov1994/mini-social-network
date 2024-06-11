@@ -10,21 +10,21 @@ export const postApi = api.injectEndpoints({
         body: postData,
       }),
     }),
-    getAppPosts: bilder.query<Post[], { content: string }>({
+    getAllPosts: bilder.query<Post[], void>({
       query: () => ({
         url: "/posts",
         method: "GET",
       }),
     }),
-    getPostById: bilder.mutation<Post, { id: string }>({
-      query: ({ id }) => ({
-        url: `/posts/${id}`,
+    getPostById: bilder.query<Post, string>({
+      query: id => ({
+        url: `/post/${id}`,
         method: "GET",
       }),
     }),
     deletePost: bilder.mutation<void, string>({
       query: id => ({
-        url: `/posts/${id}`,
+        url: `/post/${id}`,
         method: "DELETE",
       }),
     }),
@@ -35,11 +35,12 @@ export const {
   usePrefetch,
   useCreatePostMutation,
   useDeletePostMutation,
-  useGetAppPostsQuery,
-  useGetPostByIdMutation,
-  useLazyGetAppPostsQuery,
+  useGetAllPostsQuery,
+  useGetPostByIdQuery,
+  useLazyGetAllPostsQuery,
+  useLazyGetPostByIdQuery,
 } = postApi
 
 export const {
-  endpoints: { createPost, deletePost, getAppPosts, getPostById },
+  endpoints: { createPost, deletePost, getAllPosts, getPostById },
 } = postApi

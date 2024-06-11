@@ -1,4 +1,5 @@
-import { FC, memo } from "react"
+import type { FC } from "react"
+import { memo } from "react"
 import { Link } from "react-router-dom"
 import { MdAlternateEmail } from "react-icons/md"
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
@@ -15,7 +16,7 @@ export const Profile: FC<ProfileProps> = memo(props => {
     return null
   }
 
-  const { name, email, avatarUrl, bio, _id } = current
+  const { name, email, avatarUrl, bio, id } = current
 
   return (
     <Card className="py-4 w-[302px]">
@@ -23,7 +24,7 @@ export const Profile: FC<ProfileProps> = memo(props => {
         <Image src={`${BASE_URL}${avatarUrl}`} width={370} alt="profole" />
       </CardHeader>
       <CardBody>
-        <Link to={`/users/${_id}`}>
+        <Link to={`/users/${id}`}>
           <h4 className="font-bold text-large mb-2">{name}</h4>
         </Link>
         <p className="text-default-500 flex items-center gap-2">

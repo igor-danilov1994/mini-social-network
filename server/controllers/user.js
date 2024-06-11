@@ -5,7 +5,7 @@ const fs  = require("fs");
 
 const { User } = require("../models");
 const jwt = require("jsonwebtoken");
-
+const configureUserData = require("../helpers/configureUserData");
 
 const UserControllers = {
     register: async (req, res) => {
@@ -90,7 +90,12 @@ const UserControllers = {
          }
     },
     getUserById: async (req, res) => {
-        const userId = req.user.id;
+        const userId = req.params.id;
+        const ownerUserId = req.user.id;
+
+        if (!userId) {
+            return res.status(400).json({ error: 'User id is required!' })
+        }
 
         try {
             const user = await User.findById(userId)
@@ -99,23 +104,17 @@ const UserControllers = {
                 return res.status(404).json({ error: "Not found user" })
             }
 
+            const userData = configureUserData(user)
+
             res.json({
-                email: user.email,
-                name: user.name,
-                avatarUrl: user.avatarUrl,
-                posts: user.posts,
-                likes: user.likes,
-                comments: user.comments,
-                followers: user.followers,
-                following: user.following,
+                ...userData,
+                isFollowing: user.following.includes(ownerUserId)
             })
 
         } catch (e) {
             console.log('Error with getUserById')
             res.status(500).json({error: 'Server error'})
         }
-
-        res.send(userId)
     },
     updateUser: async (req, res) => {
         const { id } = req.params;
@@ -161,22 +160,7 @@ const UserControllers = {
                 if (!updatedUser) {
                     return res.status(404).json({ error: 'Пользователь не найден или данные не изменены' });
                 }
-
-                const newUserAfterUpdate = {
-                    id: updatedUser._id,
-                    email: updatedUser.email,
-                    name: updatedUser.name,
-                    avatarUrl: updatedUser.avatarUrl,
-                    posts: updatedUser.posts,
-                    likes: updatedUser.likes,
-                    comments: updatedUser.comments,
-                    followers: updatedUser.followers,
-                    following: updatedUser.following,
-                    createdAt: updatedUser.createdAt,
-                    updatedAt: updatedUser.updatedAt,
-                    bio: updatedUser.bio,
-                    dateOfBirth: updatedUser.dateOfBirth
-                }
+                const newUserAfterUpdate = configureUserData(updatedUser)
 
                 return res.json({ message: 'Пользователь успешно обновлен', user: newUserAfterUpdate});
         } catch (e) {
@@ -185,10 +169,29 @@ const UserControllers = {
         }
     },
     current: async (req, res) => {
-       try {
-           const user = await User.findById(req.user.id).populate(['posts', 'followers'])
+        const userId = req.user.id
 
-           res.json(user)
+        if (!userId) {
+            return res.status(401).json({ error: 'User not found!' })
+        }
+
+       try {
+           const user = await User.findById(userId).populate('posts')
+               .populate({
+                   path: 'followers',
+                   populate: {
+                       path: 'followerId',
+                       model: 'User'
+                   }
+               })
+
+           if (!user) {
+               return res.status(400).json({ error: 'User not found!' })
+           }
+
+           const newUser = configureUserData(user)
+
+           res.json(newUser)
        } catch (e) {
            console.log(e)
            res.status(500).json({ error: "Error with get current user" })

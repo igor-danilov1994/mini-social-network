@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="fix Login component on client part">
-      <change afterPath="$PROJECT_DIR$/server/helpers/configureUserData.js" afterDir="false" />
+    <list default="true" id="ec21c201-97c6-42e7-bf72-d88eea282fb7" name="Changes" comment="update project">
+      <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/like.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/like.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +26,12 @@
     &quot;assignee&quot;: &quot;igor-danilov1994&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/igor-danilov1994/mini-social-network.git",
-    "accountId": "216db8cf-6a8a-46b6-b62d-067183d2fc54"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/igor-danilov1994/mini-social-network.git&quot;,
+    &quot;accountId&quot;: &quot;216db8cf-6a8a-46b6-b62d-067183d2fc54&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -52,36 +50,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/igordanilov/IdeaProjects/mini-social-network",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev (1).executor": "Run",
-    "npm.dev (2).executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev (2).executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/igordanilov/IdeaProjects/mini-social-network/client/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/features/user" />
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (2)">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -124,6 +136,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.start" />
@@ -158,6 +171,10 @@
       <workItem from="1717584220164" duration="34221000" />
       <workItem from="1718003907880" duration="15000" />
       <workItem from="1718004415154" duration="26773000" />
+      <workItem from="1718711685879" duration="6767000" />
+      <workItem from="1718718579870" duration="2235000" />
+      <workItem from="1718722372259" duration="408000" />
+      <workItem from="1718722922499" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="create user methods">
       <option name="closed" value="true" />
@@ -439,7 +456,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718092501561</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update project">
+      <option name="closed" value="true" />
+      <created>1718709947612</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1718709947612</updated>
+    </task>
+    <task id="LOCAL-00037" summary="update project">
+      <option name="closed" value="true" />
+      <created>1718709956292</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1718709956292</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create profile card and logout feature" />
     <MESSAGE value="fix like-unlike and post methods" />
     <MESSAGE value="create exhaustingCheck function for check types in switch-case construction" />
     <MESSAGE value="create CustomCard on client part" />
@@ -482,7 +514,8 @@
     <MESSAGE value="fix types file on client part" />
     <MESSAGE value="fix postApi on client part" />
     <MESSAGE value="fix Login component on client part" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Login component on client part" />
+    <MESSAGE value="update project" />
+    <option name="LAST_COMMIT_MESSAGE" value="update project" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

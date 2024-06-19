@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  express_app:
+    build:
+      context: .
+    depends_on:
+      - react-app
+    ports:
+      - '3000:3000'
+
+  react-app:
+    build:
+      context: ../client
+    ports:
+      - '80:80'
